@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { useModalContext } from '../context/modal_context'
+import { FaWindowClose } from 'react-icons/fa'
+import RainbowChat from '../components/Rainbowchat.js'
+import Modal from 'react-bootstrap/Modal'
+import Form from 'react-bootstrap/Form'
+import Card from '../components/Card'
+import Footer from '../components/Footer.js'
+import Header from '../components/Header.js'
 import {
     HomePageContainer,
     Main,
     Sidebar,
     Ad,
     Testimonials,
-} from '../styled-components/HomePageStyles'
-import VideoPlayer from '../store/VideoPlayer'
-const HomePage = () => {
+    VideoBackground,
+    InternalTag1,
+    InternalTag2,
+    Button,
+    ContactCard,
 
-    const Videos = [
-        {
-            mp4: 'https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg',
-        },
-        {
-            mp4: 'https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4',
-        },
-    ]
+} from '../styled-components/HomePageStyles'
+
+import { Wrapper } from '../styled-components/ModalStyles'
+const HomePage = () => {
     const carouselContent2 = [
         {
             title: 'Car Accidents',
@@ -55,7 +62,6 @@ If you've been injured in a slip and fall accident, you need an experienced pers
             description: `
 If you've been injured in a car accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping car accident victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of car accident cases and can guide you through the legal process from start to finish.
 
-We handle a variety of car accident cases, including those involving drunk driving, distracted driving, and reckless driving. Our goal is to hold the responsible parties accountable and ensure that our clients receive the maximum compensation possible for their injuries, medical bills, lost wages, and pain and suffering.
 
 
       `,
@@ -65,7 +71,6 @@ We handle a variety of car accident cases, including those involving drunk drivi
             description: `
 If you've been injured while riding on a SEPTA vehicle or at a SEPTA station, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping SEPTA injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of SEPTA injury cases and can guide you through the legal process from start to finish.
 
-We handle a variety of SEPTA injury cases, including those involving slip and fall accidents, bus accidents, train accidents, and more. Our goal is to hold SEPTA accountable and ensure that our clients receive the maximum compensation possible for their injuries, medical bills, lost wages, and pain and suffering.
 
 `,
         },
@@ -74,13 +79,20 @@ We handle a variety of SEPTA injury cases, including those involving slip and fa
             description: `
 If you've been injured in a slip and fall accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping slip and fall injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of slip and fall accident cases and can guide you through the legal process from start to finish.
 
-We handle a variety of slip and fall accident cases, including those involving icy or wet surfaces, uneven pavement or flooring, inadequate lighting, and more. Our goal is to hold the responsible parties accountable and ensure that our clients receive the maximum compensation possible for their injuries, medical bills, lost wages, and pain and suffering.
 
 
             `,
         },
     ]
 
+
+    const [show, setShow] = useState(false)
+    const { openModal } = useModalContext()
+    const { openChat } = useModalContext()
+    const { isModalOpen, closeModal } = useModalContext()
+    const { isChatOpen, closeChat } = useModalContext()
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
     const [activeIndex, setActiveIndex] = useState(0)
 
     useEffect(() => {
@@ -93,29 +105,177 @@ We handle a variety of slip and fall accident cases, including those involving i
         return () => clearTimeout(timer)
     }, [activeIndex])
 
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 767)
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    const internalTagStyle1 = isMobile ? { fontSize: '0.93rem' } : {}
+    const internalTagStyle2 = isMobile ? { fontSize: '0.95rem' } : {}
+    const card = (
+        <ContactCard>
+            <Modal
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={show}
+                onHide={handleClose}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Contact Us</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Control
+                                type="email"
+                                placeholder="Enter email"
+                            />
+                        </Form.Group>
+
+                        <Form.Group
+                            className="mb-3"
+                            controlId="exampleForm.ControlInput1"
+                        >
+                            <Form.Control type="text" placeholder="Name" />
+                        </Form.Group>
+
+                        <Form.Group
+                            className="mb-3"
+                            controlId="exampleForm.ControlInput1"
+                        >
+                            <Form.Control type="phone" placeholder="Phone" />
+                        </Form.Group>
+
+                        <Form.Group
+                            className="mb-3"
+                            controlId="exampleForm.ControlTextarea1"
+                        >
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                placeholder="Type your message here"
+                            />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Submit
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </ContactCard>
+    )
     return (
+        
         <HomePageContainer>
+
+            <VideoBackground autoPlay muted loop>
+                <source
+                    src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4"
+                    type="video/mp4"
+                />
+                Your browser does not support the video tag.
+            </VideoBackground>
+
             <Main>
-                <div>
-                    <h1>{carouselContent[activeIndex].title}</h1>
-                    <p>{carouselContent[activeIndex].description}</p>
-                </div>
-                <div>
-                    <VideoPlayer videoId="video1" />
+                <Wrapper>
+                    <div className="container page ">
+                        <div className="info">
+                            {/* <h1 style={{ fontSize: '4rem' }}>
+                                Lessin{' '}
+                                <span style={{ color: 'blue' }}>Law</span>
+                            </h1> */}
+
+                            <img
+                                src="https://res.cloudinary.com/elpawl-llc/image/upload/v1683570898/1_tfh9ri.png"
+                                alt="logo"
+                                className="logo1"
+                            />
+                            <div
+                                className={`${
+                                    isModalOpen
+                                        ? 'modal-overlay show-modal'
+                                        : 'modal-overlay'
+                                }`}
+                            >
+                                <div className="modal-container">
+                                    <button
+                                        className="close-modal-btn"
+                                        onClick={closeModal}
+                                    >
+                                        <FaWindowClose
+                                            style={{
+                                                position: 'relative',
+                                                zIndex: '1',
+                                                top: '0',
+                                                right: '0',
+                                            }}
+                                        ></FaWindowClose>
+                                    </button>
+                                    Contact
+                                </div>
+                            </div>
+                            <div
+                                className={`${
+                                    isChatOpen
+                                        ? 'chat-overlay show-chat'
+                                        : 'chat-overlay'
+                                }`}
+                            >
+                                <div className="modal-container">
+                                    <button
+                                        className="close-chat-btn"
+                                        onClick={closeChat}
+                                    >
+                                        <FaWindowClose
+                                            style={{
+                                                position: 'relative',
+                                                zIndex: '999990',
+                                                top: '0',
+                                                right: '0',
+                                            }}
+                                        ></FaWindowClose>
+                                    </button>
+                                    <RainbowChat />
+                                </div>
+                            </div>
+                        </div>
+                        <>{card}</>
+                    </div>
+                </Wrapper>
+                <div style={{ marginTop: '10rem' }}>
+                    <h1>{carouselContent2[activeIndex].title}</h1>
+                    <InternalTag2 style={internalTagStyle2}>
+                        {carouselContent2[activeIndex].description}
+                    </InternalTag2>
                 </div>
             </Main>
             <Main>
-                <img
+                <div style={{ marginTop: '4rem' }}>
+                    <h1>{carouselContent[activeIndex].title}</h1>
+                    <InternalTag1 style={internalTagStyle1}>
+                        {carouselContent[activeIndex].description}
+                    </InternalTag1>
+                </div>
+                <div>
+                    <Card />
+                </div>
+                {/* <img
+                    style={{ marginTop: '3rem' }}
                     src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"
                     className="logo"
                     alt="logo"
-                />
-                <div>
-                    <h1>{carouselContent2[activeIndex].title}</h1>
-                    <p>{carouselContent2[activeIndex].description}</p>
-                </div>
+                /> */}
             </Main>
-
             <Sidebar>
                 <Testimonials>
                     <p>Client Testimonials</p>
@@ -137,11 +297,26 @@ We handle a variety of slip and fall accident cases, including those involving i
                     </ul>
                 </Testimonials>
                 <Ad>
-                    <p>Contact Us</p>
-                    <p>Jeffrey R. Lessin & Associates, P.C.</p>
+                    <div className="btn-groups">
+                        <Button
+                            variant="contained"
+                            onClick={handleShow}
+                            className="btn btn-hero"
+                        >
+                            contact us
+                        </Button>
+                        <Button
+                            variant="contained"
+                            onClick={openChat}
+                            className="btn btn-hero"
+                        >
+                            live chat
+                        </Button>
+                    </div>
                     <p>(215) 599-1400</p>
                 </Ad>
             </Sidebar>
+            <Footer />
         </HomePageContainer>
     )
 }
