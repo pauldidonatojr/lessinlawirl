@@ -252,10 +252,61 @@ export const ContactCard = styled.div`
         }
     }
 `
+export const Container1 = styled.div`
+    margin-top: 20rem;
+    margin-bottom: 10rem;
+
+    @media (max-width: 768px) {
+        margin-top: 22rem;
+    }
+`
+export const Title = styled.div`
+    width: 100%;
+    background-color: lightblue;
+   border-radius: 15%;
+    height: 50vh;
+    p {
+        margin-top: 2rem;
+
+    }
+    .titleh1 {
+        margin-top: 4rem;
+        font-size: 50px;
+        margin-right: 10px; /* Adjust the margin as needed */
+    }
+   .container2 {
+    height: 25rem;
+    width: 100%;
+
+   }
+    img {
+        width: 100%;
+        max-height: 80%;
+        margin-bottom: 5rem;/* Ensure the image doesn't exceed the container height */
+    }
+
+    @media (max-width: 768px) {
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+        border-radius: 14%;
+        p {
+        }
+        .titleh1 {
+            font-size: 50px;
+        }
+        img {
+        }
+    }
+`
+
 export const Main = styled.div`
     flex: 1;
     padding: 10px;
-
 
     h1 {
         font-size: 32px;
@@ -408,7 +459,7 @@ export const Button = styled.button`
     border-radius: 10px;
 
     &:hover {
-        background-color: #3e8e41;
+        background-color: #e0ffff;
     }
 
     &:active {

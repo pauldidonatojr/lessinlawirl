@@ -1,27 +1,35 @@
 import React from 'react'
-import {
-    FooterContainer,
-    FooterLogo,
-    FooterNav,
-    FooterNavItem,
-} from '../styled-components/FooterStyles.js'
 
 const Footer = () => {
     return (
-        <FooterContainer>
-            <FooterLogo>© 2023 Lessin Law</FooterLogo>
-            <FooterNav>
-                {/* <FooterNavItem href="#">Home</FooterNavItem>
-                <FooterNavItem href="#">About Us</FooterNavItem>
-                <FooterNavItem href="#">Services</FooterNavItem>
-                <FooterNavItem href="#">Testimonials</FooterNavItem>
-                <FooterNavItem href="#">Contact Us</FooterNavItem> */}
-                <FooterNavItem href="#">
-                    Jeffrey R. Lessin & Associates, P.C. represents people
-                    living in communities throughout Pennsylvania
-                </FooterNavItem>
-            </FooterNav>
-        </FooterContainer>
+        <section>
+
+            <footer className="footer-distributed">
+                <div className="footer-left">
+                    <h3>
+                        Lessin<span>Law</span>
+                    </h3>
+                    <p className="footer-links">
+                        <a href="#">Home</a> ·<a href="#">Blog</a> ·
+                        <a href="#">Pricing</a> ·<a href="#">About</a> ·
+                        <a href="#">Faq</a> ·<a href="#">Contact</a>
+                    </p>
+                    <p className="footer-company-name">Lessin Law Pennsylvania Lawyers Philadelphia Accident Claims Attorney © 2023</p>
+                
+                </div>
+                <div className="footer-right">
+                    <p>Contact Us</p>
+                    <form action="#" method="post">
+                        <input type="text" name="email" placeholder="Email" />
+                        <textarea
+                            name="message"
+                            placeholder="Message"
+                        ></textarea>
+                        <button>Send</button>
+                    </form>
+                </div>
+            </footer>
+        </section>
     )
 }
 

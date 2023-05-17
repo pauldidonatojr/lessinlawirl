@@ -8,6 +8,9 @@ import Form from 'react-bootstrap/Form'
 import Card from '../components/Card'
 import Footer from '../components/Footer.js'
 import Header from '../components/Header.js'
+import Pop from '../components/Pop.js'
+import Card2 from '../components/Card2.js'
+
 import {
     HomePageContainer,
     Main,
@@ -19,7 +22,8 @@ import {
     InternalTag2,
     Button,
     ContactCard,
-
+    Container1,
+    Title,
 } from '../styled-components/HomePageStyles'
 
 import { Wrapper } from '../styled-components/ModalStyles'
@@ -85,7 +89,6 @@ If you've been injured in a slip and fall accident, you need an experienced pers
         },
     ]
 
-
     const [show, setShow] = useState(false)
     const { openModal } = useModalContext()
     const { openChat } = useModalContext()
@@ -94,7 +97,6 @@ If you've been injured in a slip and fall accident, you need an experienced pers
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
     const [activeIndex, setActiveIndex] = useState(0)
-
     useEffect(() => {
         const timer = setTimeout(() => {
             setActiveIndex(
@@ -175,149 +177,168 @@ If you've been injured in a slip and fall accident, you need an experienced pers
         </ContactCard>
     )
     return (
-        
-        <HomePageContainer>
+        <>
+            <Card2 />
+            <HomePageContainer>
+                <Pop />
+                <VideoBackground autoPlay muted loop>
+                    <source
+                        src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4"
+                        type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                </VideoBackground>
 
-            <VideoBackground autoPlay muted loop>
-                <source
-                    src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4"
-                    type="video/mp4"
-                />
-                Your browser does not support the video tag.
-            </VideoBackground>
-
-            <Main>
-                <Wrapper>
-                    <div className="container page ">
-                        <div className="info">
-                            {/* <h1 style={{ fontSize: '4rem' }}>
+                <Main>
+                    <Wrapper>
+                        <div className="container page ">
+                            <div className="info">
+                                {/* <h1 style={{ fontSize: '4rem' }}>
                                 Lessin{' '}
                                 <span style={{ color: 'blue' }}>Law</span>
                             </h1> */}
 
-                            <img
+                                {/* <img
                                 src="https://res.cloudinary.com/elpawl-llc/image/upload/v1683570898/1_tfh9ri.png"
                                 alt="logo"
                                 className="logo1"
-                            />
-                            <div
-                                className={`${
-                                    isModalOpen
-                                        ? 'modal-overlay show-modal'
-                                        : 'modal-overlay'
-                                }`}
-                            >
-                                <div className="modal-container">
-                                    <button
-                                        className="close-modal-btn"
-                                        onClick={closeModal}
-                                    >
-                                        <FaWindowClose
-                                            style={{
-                                                position: 'relative',
-                                                zIndex: '1',
-                                                top: '0',
-                                                right: '0',
-                                            }}
-                                        ></FaWindowClose>
-                                    </button>
-                                    Contact
+                            /> */}
+                                <Title>
+                                    <div className="container2">
+                                        <h1 className="titleh1">
+                                            Lessin <span>Law</span>
+                                        </h1>
+                                        <p style={{ fontSize: '1.5rem' }}>
+                                            Lessin Law Pennsylvania Lawyers
+                                            Philadelphia Accident Claims
+                                            Attorney
+                                        </p>
+                                        <img
+                                            src="https://res.cloudinary.com/elpawl-llc/image/upload/v1683592910/1_ecl3mh.png"
+                                            alt="logo"
+                                        />
+                                    </div>
+                                </Title>
+
+                                <div
+                                    className={`${
+                                        isModalOpen
+                                            ? 'modal-overlay show-modal'
+                                            : 'modal-overlay'
+                                    }`}
+                                >
+                                    <div className="modal-container">
+                                        <button
+                                            className="close-modal-btn"
+                                            onClick={closeModal}
+                                        >
+                                            <FaWindowClose
+                                                style={{
+                                                    position: 'relative',
+                                                    zIndex: '1',
+                                                    top: '0',
+                                                    right: '0',
+                                                }}
+                                            ></FaWindowClose>
+                                        </button>
+                                        Contact
+                                    </div>
+                                </div>
+                                <div
+                                    className={`${
+                                        isChatOpen
+                                            ? 'chat-overlay show-chat'
+                                            : 'chat-overlay'
+                                    }`}
+                                >
+                                    <div className="modal-container">
+                                        <button
+                                            className="close-chat-btn"
+                                            onClick={closeChat}
+                                        >
+                                            <FaWindowClose
+                                                style={{
+                                                    position: 'relative',
+                                                    zIndex: '999990',
+                                                    top: '0',
+                                                    right: '0',
+                                                }}
+                                            ></FaWindowClose>
+                                        </button>
+                                        <RainbowChat />
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                className={`${
-                                    isChatOpen
-                                        ? 'chat-overlay show-chat'
-                                        : 'chat-overlay'
-                                }`}
-                            >
-                                <div className="modal-container">
-                                    <button
-                                        className="close-chat-btn"
-                                        onClick={closeChat}
-                                    >
-                                        <FaWindowClose
-                                            style={{
-                                                position: 'relative',
-                                                zIndex: '999990',
-                                                top: '0',
-                                                right: '0',
-                                            }}
-                                        ></FaWindowClose>
-                                    </button>
-                                    <RainbowChat />
-                                </div>
-                            </div>
+                            <>{card}</>
                         </div>
-                        <>{card}</>
+                    </Wrapper>
+                    <Container1 style={{}}>
+                        <h1>{carouselContent2[activeIndex].title}</h1>
+                        <InternalTag2 style={internalTagStyle2}>
+                            {carouselContent2[activeIndex].description}
+                        </InternalTag2>
+                    </Container1>
+                </Main>
+                <Main>
+                    <div style={{ marginTop: '4rem' }}>
+                        <h1>{carouselContent[activeIndex].title}</h1>
+                        <InternalTag1 style={internalTagStyle1}>
+                            {carouselContent[activeIndex].description}
+                        </InternalTag1>
                     </div>
-                </Wrapper>
-                <div style={{ marginTop: '10rem' }}>
-                    <h1>{carouselContent2[activeIndex].title}</h1>
-                    <InternalTag2 style={internalTagStyle2}>
-                        {carouselContent2[activeIndex].description}
-                    </InternalTag2>
-                </div>
-            </Main>
-            <Main>
-                <div style={{ marginTop: '4rem' }}>
-                    <h1>{carouselContent[activeIndex].title}</h1>
-                    <InternalTag1 style={internalTagStyle1}>
-                        {carouselContent[activeIndex].description}
-                    </InternalTag1>
-                </div>
-                <div>
-                    <Card />
-                </div>
-                {/* <img
+                    <div>
+                        <Card />
+                    </div>
+                    {/* <img
                     style={{ marginTop: '3rem' }}
                     src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"
                     className="logo"
                     alt="logo"
                 /> */}
-            </Main>
-            <Sidebar>
-                <Testimonials>
-                    <p>Client Testimonials</p>
-                    <ul>
-                        <li>
-                            "I highly recommend this law firm. They helped me
-                            get the compensation I deserved for my car
-                            accident."
-                        </li>
-                        <li>
-                            "The lawyers were very professional and
-                            knowledgeable. They kept me informed throughout the
-                            entire process."
-                        </li>
-                        <li>
-                            "I'm so grateful for their help. They made a
-                            difficult situation much easier to deal with."
-                        </li>
-                    </ul>
-                </Testimonials>
-                <Ad>
-                    <div className="btn-groups">
-                        <Button
-                            variant="contained"
-                            onClick={handleShow}
-                            className="btn btn-hero"
-                        >
-                            contact us
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={openChat}
-                            className="btn btn-hero"
-                        >
-                            live chat
-                        </Button>
-                    </div>
-                    <p>(215) 599-1400</p>
-                </Ad>
-            </Sidebar>
-            <Footer />
-        </HomePageContainer>
+                </Main>
+                <Sidebar>
+                    <Testimonials>
+                        <p>Client Testimonials</p>
+                        <ul>
+                            <li>
+                                "I highly recommend this law firm. They helped
+                                me get the compensation I deserved for my car
+                                accident."
+                            </li>
+                            <li>
+                                "The lawyers were very professional and
+                                knowledgeable. They kept me informed throughout
+                                the entire process."
+                            </li>
+                            <li>
+                                "I'm so grateful for their help. They made a
+                                difficult situation much easier to deal with."
+                            </li>
+                        </ul>
+                    </Testimonials>
+                    <Ad>
+                        <div className="btn-groups">
+                            <Button
+                                variant="contained"
+                                onClick={handleShow}
+                                className="btn btn-hero"
+                            >
+                                contact us
+                            </Button>
+                            <Button
+                                variant="contained"
+                                onClick={openChat}
+                                className="btn btn-hero"
+                            >
+                                live chat
+                            </Button>
+                        </div>
+                        <p>(215) 599-1400</p>
+                    </Ad>
+                </Sidebar>
+                <Footer />
+            </HomePageContainer>
+        </>
     )
 }
 
