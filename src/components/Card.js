@@ -24,11 +24,11 @@ const CardContainer = styled.div`
     margin-left: 2rem;
 
     @media (max-width: 768px) {
-        width:80%;
-        height: 50vh;
-        margin-top: 2rem;
-      }
-
+        width: 95%;
+        height: 100vh;
+        margin-left: 0.5rem;
+        margin-top: 5rem;
+    }
     ::-webkit-scrollbar {
         display: none; /* Hide the scrollbar for WebKit-based browsers */
     }

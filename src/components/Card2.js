@@ -21,10 +21,10 @@ const CardContainer = styled.div`
     width: 52vh;
     margin-left: 2rem;
     @media (max-width: 768px) {
-        width: 95%;
+        width: 85%;
         height: 100vh;
-        margin-left: 0.5rem;
-        margin-top: 5rem;
+        margin-left: 1.3rem;
+        margin-top: 30rem;
     }
 
     ::-webkit-scrollbar {
