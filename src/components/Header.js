@@ -12,7 +12,7 @@ const HeaderContainer = styled.header`
     display: grid;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 `
 
 const Header = () => {
