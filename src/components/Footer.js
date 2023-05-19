@@ -3,7 +3,6 @@ import React from 'react'
 const Footer = () => {
     return (
         <section>
-
             <footer className="footer-distributed">
                 <div className="footer-left">
                     <h3>
@@ -14,8 +13,11 @@ const Footer = () => {
                         <a href="#">Pricing</a> ·<a href="#">About</a> ·
                         <a href="#">Faq</a> ·<a href="#">Contact</a>
                     </p>
-                    <p className="footer-company-name">Lessin Law Pennsylvania Lawyers Philadelphia Accident Claims Attorney © 2023</p>
-                
+                    <p className="footer-company-name">
+                        Lessin Law Pennsylvania Lawyers Philadelphia Accident
+                        Claims Attorney © 2023
+                    </p>
+                    P.C 1515 Market St #1650, Philadelphia, PA
                 </div>
                 <div className="footer-right">
                     <p>Contact Us</p>

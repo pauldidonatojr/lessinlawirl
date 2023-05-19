@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { useModalContext } from '../context/modal_context'
+import { FaWindowClose } from 'react-icons/fa'
+import RainbowChat from '../components/Rainbowchat.js'
 
 const Wrapper = styled.div`
     position: fixed;
@@ -14,8 +17,6 @@ const Wrapper = styled.div`
     z-index: 9999;
     background-color: black;
     @media (max-width: 767px) {
-
-
     }
     .popup-card {
         text-align: center;
@@ -74,7 +75,7 @@ const Button1 = styled.button`
         font-size: 17px;
     }
     &:hover {
-        background-color: #e6be8a;
+        background-color: #b0c4de;
     }
 
     &:active {
@@ -97,7 +98,7 @@ const Button2 = styled.button`
     border-radius: 10px;
 
     &:hover {
-        background-color: #e6be8a;
+        background-color: #b0c4de;
     }
 
     &:active {
@@ -106,43 +107,45 @@ const Button2 = styled.button`
         transform: translateY(4px);
     }
     @media (max-width: 767px) {
-        font-size:17px;
+        font-size: 17px;
     }
 `
 const Popup = ({ onClose }) => {
-    const [lessinColor, setLessinColor] = useState('#003366')
-    const [lawColor, setLawColor] = useState('#B0C4DE')
 
+    const { openChat } = useModalContext()
+    const { isChatOpen, closeChat } = useModalContext()
+  const [lessinColor, setLessinColor] = useState('#003366')
+  const [lawColor, setLawColor] = useState('#B0C4DE')
     useEffect(() => {
         const intervalId = setInterval(() => {
             setLessinColor(getRandomColor())
             setLawColor(getRandomColor())
-        }, 3000)
+        }, 2000)
         return () => {
             clearInterval(intervalId)
         }
     }, [])
 
     const getRandomColor = () => {
-      const colors = [
-          '#003366',
-          '#76D7EA',
-          '#37AFD4',
-          '#20AAEA',
-          '#7FBEBD',
-          '#327BCD',
-          '#57A8E3',
-          '#80B2C2',
-          '#3BBFCF',
-          '#00CCFC',
-          '#0B8BB8',
-          '#17C6EA',
-          '#008FB1',
-          '#00BFFF',
-          '#12C5FF',
-          '#9AD5FF',
-          '#11CCFF',
-      ]
+        const colors = [
+            '#003366',
+            '#76D7EA',
+            '#37AFD4',
+            '#20AAEA',
+            '#7FBEBD',
+            '#327BCD',
+            '#57A8E3',
+            '#80B2C2',
+            '#3BBFCF',
+            '#00CCFC',
+            '#0B8BB8',
+            '#17C6EA',
+            '#008FB1',
+            '#00BFFF',
+            '#12C5FF',
+            '#9AD5FF',
+            '#11CCFF',
+        ]
 
         const randomIndex = Math.floor(Math.random() * colors.length)
         return colors[randomIndex]
@@ -150,6 +153,25 @@ const Popup = ({ onClose }) => {
 
     return (
         <Wrapper className="popup-overlay">
+            <div
+                className={`${
+                    isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'
+                }`}
+            >
+                <div className="modal-container">
+                    <button className="close-chat-btn" onClick={closeChat}>
+                        <FaWindowClose
+                            style={{
+                                position: 'relative',
+                                zIndex: '999990',
+                                top: '0',
+                                right: '0',
+                            }}
+                        ></FaWindowClose>
+                    </button>
+                    <RainbowChat />
+                </div>
+            </div>
             <div className="popup-card">
                 <h1
                     className="title"
@@ -169,7 +191,7 @@ const Popup = ({ onClose }) => {
                         {' '}
                         <Button1
                             variant="contained"
-                            onClick={onClose}
+                            onClick={openChat}
                             className="btn btn-hero"
                         >
                             Live Chat

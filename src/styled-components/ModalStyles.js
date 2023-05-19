@@ -6,7 +6,7 @@ export const Wrapper = styled.main`
     justify-content: center;
     height: 25vh;
     width: 100%;
-    
+
     .navbar {
         background-color: blue;
         width: 100%;

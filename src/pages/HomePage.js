@@ -10,10 +10,13 @@ import Footer from '../components/Footer.js'
 import Header from '../components/Header.js'
 import Pop from '../components/Pop.js'
 import Card2 from '../components/Card2.js'
+import Reviews from '../components/Reviews.js'
+import { carouselContent, carouselContent2 } from '../utils/data.js'
 
 import {
     HomePageContainer,
     Main,
+    Main1,
     Sidebar,
     Ad,
     Testimonials,
@@ -21,79 +24,23 @@ import {
     InternalTag1,
     InternalTag2,
     Button,
+    Button2,
     ContactCard,
     Container1,
+    Container2,
     Title,
 } from '../styled-components/HomePageStyles'
 
 import { Wrapper } from '../styled-components/ModalStyles'
 const HomePage = () => {
-    const carouselContent2 = [
-        {
-            title: 'Car Accidents',
-            description: `
-If you've been injured in a car accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping car accident victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of car accident cases and can guide you through the legal process from start to finish.
-
-We handle a variety of car accident cases, including those involving drunk driving, distracted driving, and reckless driving. Our goal is to hold the responsible parties accountable and ensure that our clients receive the maximum compensation possible for their injuries, medical bills, lost wages, and pain and suffering.
-
-
-      `,
-        },
-        {
-            title: 'SEPTA Injuries',
-            description: `
-If you've been injured while riding on a SEPTA vehicle or at a SEPTA station, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping SEPTA injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of SEPTA injury cases and can guide you through the legal process from start to finish.
-
-
-
-
-`,
-        },
-        {
-            title: 'Slip and Fall Accidents',
-            description: `
-If you've been injured in a slip and fall accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping slip and fall injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of slip and fall accident cases and can guide you through the legal process from start to finish.
-
-
-
-
-            `,
-        },
-    ]
-    const carouselContent = [
-        {
-            title: 'Car Accidents',
-            description: `
-If you've been injured in a car accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping car accident victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of car accident cases and can guide you through the legal process from start to finish.
-
-
-
-      `,
-        },
-        {
-            title: 'SEPTA Injuries',
-            description: `
-If you've been injured while riding on a SEPTA vehicle or at a SEPTA station, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping SEPTA injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of SEPTA injury cases and can guide you through the legal process from start to finish.
-
-
-`,
-        },
-        {
-            title: 'Slip and Fall Accidents',
-            description: `
-If you've been injured in a slip and fall accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping slip and fall injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of slip and fall accident cases and can guide you through the legal process from start to finish.
-
-
-
-            `,
-        },
-    ]
-
+    const [testimonials, setTestimonials] = useState([])
     const [show, setShow] = useState(false)
     const { openModal } = useModalContext()
     const { openChat } = useModalContext()
     const { isModalOpen, closeModal } = useModalContext()
     const { isChatOpen, closeChat } = useModalContext()
+      const [lessinColor, setLessinColor] = useState('#003366')
+      const [lawColor, setLawColor] = useState('#B0C4DE')
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
     const [activeIndex, setActiveIndex] = useState(0)
@@ -102,13 +49,37 @@ If you've been injured in a slip and fall accident, you need an experienced pers
             setActiveIndex(
                 activeIndex === carouselContent.length - 1 ? 0 : activeIndex + 1
             )
-        }, 5000)
+        }, 8000)
 
         return () => clearTimeout(timer)
     }, [activeIndex])
 
     const [isMobile, setIsMobile] = useState(false)
+const getRandomColor = () => {
+const colors = [
+    '#001d33',
+    '#3d8d9c',
+    '#1f6a82',
+    '#196a8a',
+    '#4e6462',
+    '#1f4066',
+    '#2c6599',
+    '#3d7370',
+    '#1f898f',
+    '#00a6c2',
+    '#064d63',
+    '#0b9bb8',
+    '#006b87',
+    '#0088b3',
+    '#0b9fcc',
+    '#6a9dc7',
+    '#0d99cc',
+]
 
+
+    const randomIndex = Math.floor(Math.random() * colors.length)
+    return colors[randomIndex]
+}
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 767)
         handleResize()
@@ -116,8 +87,28 @@ If you've been injured in a slip and fall accident, you need an experienced pers
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+  useEffect(() => {
+      const intervalId = setInterval(() => {
+          setLessinColor(getRandomColor())
+          setLawColor(getRandomColor())
+      }, 2000)
+      return () => {
+          clearInterval(intervalId)
+      }
+  }, [])
     const internalTagStyle1 = isMobile ? { fontSize: '0.93rem' } : {}
     const internalTagStyle2 = isMobile ? { fontSize: '0.95rem' } : {}
+
+    const handleMapClick = () => {
+        // Open the map with the location
+        window.open(
+            'https://maps.google.com/?q=1515+Market+St+%231650,+Philadelphia,+PA'
+        )
+    }
+    const openURL = () => {
+        window.open('https://g.page/r/CdWZcmBLeneOEB0/review', '_blank')
+    }
+
     const card = (
         <ContactCard>
             <Modal
@@ -177,168 +168,236 @@ If you've been injured in a slip and fall accident, you need an experienced pers
         </ContactCard>
     )
     return (
-        <>
-            <Card2 />
-            <HomePageContainer>
-                <Pop />
-                <VideoBackground autoPlay muted loop>
-                    <source
-                        src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4"
-                        type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                </VideoBackground>
+        <HomePageContainer>
+            <Main1>
+                <div className="mainbox">
+                    <h1 className="lessintitle">
+                        <span style={{ color: lessinColor }}>Lessin</span>{' '}
+                        <span style={{ color: lawColor }}>Law</span>
+                    </h1>
+                    <h3> Pennsylvania Personal Injury Lawyers</h3>
+                    <p
+                        onClick={openURL}
+                        style={{ marginLeft: '1rem', fontSize: '1rem' }}
+                    >
+                        {' '}
+                        Click Here Leave Us a Review!{' '}
+                    </p>
 
-                <Main>
-                    <Wrapper>
-                        <div className="container page ">
-                            <div className="info">
-                                {/* <h1 style={{ fontSize: '4rem' }}>
+                    <div style={{ display: 'grid' }}>
+                        <Button
+                            variant="contained"
+                            onClick={openChat}
+                            className="btn btn-hero"
+                        >
+                            live chat
+                        </Button>
+                        <Button
+                            onClick={handleMapClick}
+                            className="btn btn-hero"
+                        >
+                            {' '}
+                            Directions
+                        </Button>
+                        <Button
+                            variant="contained"
+                            onClick={handleShow}
+                            className="btn btn-hero"
+                        >
+                            contact us
+                        </Button>
+                    </div>
+
+                    <p>
+                        Our team of dedicated personal injury lawyers is devoted
+                        to seeking justice for our clients who have suffered
+                        injuries in various incidents. We specialize in handling
+                        cases such as car accidents, motorcycle accidents,
+                        pedestrian accidents, bicycle accidents, slip and fall
+                        accidents, medical malpractice, product liability,
+                        workplace accidents, construction accidents, dog bites,
+                        assault or battery, wrongful death, public
+                        transportation accidents, aviation accidents, boating
+                        accidents, defamation, toxic exposure, nursing home
+                        abuse, and recreational accidents. With a relentless
+                        pursuit of fair compensation, we work tirelessly to
+                        ensure that our clients receive the financial reparation
+                        they deserve for their injuries.
+                    </p>
+                </div>
+            </Main1>
+            <Pop />
+
+            <VideoBackground autoPlay muted loop>
+                <source
+                    src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4"
+                    type="video/mp4"
+                />
+                Your browser does not support the video tag.
+            </VideoBackground>
+
+            <Main>
+                <Wrapper>
+                    <div className="container page ">
+                        <div className="info">
+                            <Card />
+                            {/* <h1 style={{ fontSize: '4rem' }}>
                                 Lessin{' '}
                                 <span style={{ color: 'blue' }}>Law</span>
                             </h1> */}
 
-                                {/* <img
+                            {/* <img
                                 src="https://res.cloudinary.com/elpawl-llc/image/upload/v1683570898/1_tfh9ri.png"
                                 alt="logo"
                                 className="logo1"
                             /> */}
-                                <Title>
-                                    <div className="container2">
-                                        <h1 className="titleh1">
-                                            Lessin <span>Law</span>
-                                        </h1>
-                                        <p style={{ fontSize: '1.5rem' }}>
-                                            Lessin Law Pennsylvania Lawyers
-                                            Philadelphia Accident Claims
-                                            Attorney
-                                        </p>
-                                        <img
-                                            src="https://res.cloudinary.com/elpawl-llc/image/upload/v1683592910/1_ecl3mh.png"
-                                            alt="logo"
-                                        />
-                                    </div>
-                                </Title>
 
-                                <div
-                                    className={`${
-                                        isModalOpen
-                                            ? 'modal-overlay show-modal'
-                                            : 'modal-overlay'
-                                    }`}
-                                >
-                                    <div className="modal-container">
-                                        <button
-                                            className="close-modal-btn"
-                                            onClick={closeModal}
-                                        >
-                                            <FaWindowClose
-                                                style={{
-                                                    position: 'relative',
-                                                    zIndex: '1',
-                                                    top: '0',
-                                                    right: '0',
-                                                }}
-                                            ></FaWindowClose>
-                                        </button>
-                                        Contact
-                                    </div>
+                            {/* <Title>
+                                <div className="container2">
+                                    <h1 className="titleh1">
+                                        Lessin <span>Law</span>
+                                    </h1>
+                                    <p style={{ fontSize: '1.5rem' }}>
+                                        Lessin Law Pennsylvania Lawyers
+                                        Philadelphia Accident Claims Attorney
+                                    </p>
+
                                 </div>
-                                <div
-                                    className={`${
-                                        isChatOpen
-                                            ? 'chat-overlay show-chat'
-                                            : 'chat-overlay'
-                                    }`}
-                                >
-                                    <div className="modal-container">
-                                        <button
-                                            className="close-chat-btn"
-                                            onClick={closeChat}
-                                        >
-                                            <FaWindowClose
-                                                style={{
-                                                    position: 'relative',
-                                                    zIndex: '999990',
-                                                    top: '0',
-                                                    right: '0',
-                                                }}
-                                            ></FaWindowClose>
-                                        </button>
-                                        <RainbowChat />
-                                    </div>
+                            </Title> */}
+
+                            <div
+                                className={`${
+                                    isModalOpen
+                                        ? 'modal-overlay show-modal'
+                                        : 'modal-overlay'
+                                }`}
+                            >
+                                <div className="modal-container">
+                                    <button
+                                        className="close-modal-btn"
+                                        onClick={closeModal}
+                                    >
+                                        <FaWindowClose
+                                            style={{
+                                                position: 'relative',
+                                                zIndex: '1',
+                                                top: '0',
+                                                right: '0',
+                                            }}
+                                        ></FaWindowClose>
+                                    </button>
+                                    Contact
                                 </div>
                             </div>
-                            <>{card}</>
+                            <div
+                                className={`${
+                                    isChatOpen
+                                        ? 'chat-overlay show-chat'
+                                        : 'chat-overlay'
+                                }`}
+                            >
+                                <div className="modal-container">
+                                    <button
+                                        className="close-chat-btn"
+                                        onClick={closeChat}
+                                    >
+                                        <FaWindowClose
+                                            style={{
+                                                position: 'relative',
+                                                zIndex: '999990',
+                                                top: '0',
+                                                right: '0',
+                                            }}
+                                        ></FaWindowClose>
+                                    </button>
+                                    <RainbowChat />
+                                </div>
+                            </div>
                         </div>
-                    </Wrapper>
-                    <Container1 style={{}}>
-                        <h1>{carouselContent2[activeIndex].title}</h1>
-                        <InternalTag2 style={internalTagStyle2}>
-                            {carouselContent2[activeIndex].description}
-                        </InternalTag2>
-                    </Container1>
-                </Main>
-                <Main>
-                    <div style={{ marginTop: '4rem' }}>
-                        <h1>{carouselContent[activeIndex].title}</h1>
-                        <InternalTag1 style={internalTagStyle1}>
-                            {carouselContent[activeIndex].description}
-                        </InternalTag1>
+                        <>{card}</>
                     </div>
-                    <div>
-                        <Card />
-                    </div>
-                    {/* <img
+                </Wrapper>
+                <Container1 style={{}}>
+                    <h1>{carouselContent2[activeIndex].title}</h1>
+                    <InternalTag2 style={internalTagStyle2}>
+                        {carouselContent2[activeIndex].description}
+                    </InternalTag2>
+                </Container1>
+            </Main>
+            <Main>
+                <div>
+                    <Card2 />
+                </div>
+                <Container2>
+                    <h1>{carouselContent[activeIndex].title}</h1>
+                    <InternalTag1 style={internalTagStyle1}>
+                        {carouselContent[activeIndex].description}
+                    </InternalTag1>
+                </Container2>
+
+                {/* <img
                     style={{ marginTop: '3rem' }}
                     src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"
                     className="logo"
                     alt="logo"
                 /> */}
-                </Main>
-                <Sidebar>
-                    <Testimonials>
-                        <p>Client Testimonials</p>
-                        <ul>
-                            <li>
-                                "I highly recommend this law firm. They helped
-                                me get the compensation I deserved for my car
-                                accident."
-                            </li>
-                            <li>
-                                "The lawyers were very professional and
-                                knowledgeable. They kept me informed throughout
-                                the entire process."
-                            </li>
-                            <li>
-                                "I'm so grateful for their help. They made a
-                                difficult situation much easier to deal with."
-                            </li>
-                        </ul>
-                    </Testimonials>
-                    <Ad>
-                        <div className="btn-groups">
-                            <Button
-                                variant="contained"
-                                onClick={handleShow}
-                                className="btn btn-hero"
-                            >
-                                contact us
-                            </Button>
-                            <Button
-                                variant="contained"
-                                onClick={openChat}
-                                className="btn btn-hero"
-                            >
-                                live chat
-                            </Button>
-                        </div>
-                        <p>(215) 599-1400</p>
-                    </Ad>
-                </Sidebar>
-                <Footer />
-            </HomePageContainer>
-        </>
+            </Main>
+            <Sidebar>
+                <Testimonials>
+                    <p className="client">Client Testimonials</p>
+                    <p onClick={openURL} style={{ marginLeft: '4.5rem' }}>
+                        {' '}
+                        Click Here{' '}
+                    </p>
+                    <p onClick={openURL} style={{ marginLeft: '2.5rem' }}>
+                        {' '}
+                        Leave us a review!{' '}
+                    </p>
+                    <Reviews />
+                </Testimonials>
+
+                <Ad>
+                    <div
+                        style={{
+                            display: 'grid',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <p>
+                            Jeffrey R. Lessin & Associates, P.C 1515 Market St
+                            #1650, Philadelphia, PA
+                        </p>
+                    </div>
+                    <div className="btn-groups">
+                        <Button
+                            variant="contained"
+                            onClick={handleShow}
+                            className="btn btn-hero"
+                        >
+                            contact us
+                        </Button>
+
+                        <Button
+                            variant="contained"
+                            onClick={openChat}
+                            className="btn btn-hero"
+                        >
+                            live chat
+                        </Button>
+                        <Button
+                            onClick={handleMapClick}
+                            className="btn btn-hero"
+                        >
+                            {' '}
+                            Directions
+                        </Button>
+                    </div>
+                    <p>(215) 599-1400</p>
+                </Ad>
+            </Sidebar>
+            <Footer />
+        </HomePageContainer>
     )
 }
 
