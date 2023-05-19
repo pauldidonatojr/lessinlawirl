@@ -263,12 +263,12 @@ export const Container1 = styled.div`
     align-items: center;
     text-align: center;
     @media (max-width: 768px) {
-        margin-top: 45rem;
+        margin-top: 54rem;
 
         margin-bottom: 3rem;
         width: 80%;
-        margin-left: 2rem;
-        height: 70vh;
+        margin-left: 2.5rem;
+        height: 55vh;
     }
 `
 export const Container2 = styled.div`
@@ -282,12 +282,12 @@ export const Container2 = styled.div`
     align-items: center;
     text-align: center;
     @media (max-width: 768px) {
-        margin-top: 10rem;
+        margin-top: 6rem;
 
         margin-bottom: 3rem;
         width: 80%;
-        margin-left: 2rem;
-        height: 70vh;
+        margin-left: 2.5rem;
+        height: 55vh;
     }
 `
 export const Title = styled.div`
@@ -513,7 +513,7 @@ export const Testimonials = styled.div`
         }
     }
     @media (max-width: 768px) {
-        margin-top: 75rem;
+        margin-top: 95rem;
     }
 `
 
