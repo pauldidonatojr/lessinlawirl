@@ -9,7 +9,7 @@ export const links = [
     {
         id: 2,
         url: '/firmoveriew',
-        text: 'about',
+        text: 'profiles',
     },
     {
         id: 3,
@@ -21,6 +21,11 @@ export const links = [
         id: 4,
         url: '/articles',
         text: 'articles',
+    },
+    {
+        id: 5,
+        url: 'https://secure.lessinlaw.com/',
+        text: 'login',
     },
 ]
 

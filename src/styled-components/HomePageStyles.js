@@ -263,7 +263,7 @@ export const Container1 = styled.div`
     align-items: center;
     text-align: center;
     @media (max-width: 768px) {
-        margin-top: 40rem;
+        margin-top: 45rem;
 
         margin-bottom: 3rem;
         width: 80%;
@@ -282,7 +282,7 @@ export const Container2 = styled.div`
     align-items: center;
     text-align: center;
     @media (max-width: 768px) {
-        margin-top: 5rem;
+        margin-top: 10rem;
 
         margin-bottom: 3rem;
         width: 80%;
@@ -415,14 +415,16 @@ export const Main1 = styled.div`
             margin-bottom: 20px;
         }
         p {
-            ${'' /* font-size: 14px;
+            ${
+                '' /* font-size: 14px;
             line-height: 1.5;
             margin-bottom: 20px;
             text-align: center;
             margin-top: 1rem;
             border-radius: 5%;
-            line-height: 1.5rem; */}
-             display: none;
+            line-height: 1.5rem; */
+            }
+            display: none;
         }
     }
 `
@@ -510,11 +512,9 @@ export const Testimonials = styled.div`
             }
         }
     }
-  @media (max-width: 768px) {
-
-    margin-top: 60rem;
-    width: 20rem;
-  }
+    @media (max-width: 768px) {
+        margin-top: 75rem;
+    }
 `
 
 // Holy Grail Flexbox Layout
