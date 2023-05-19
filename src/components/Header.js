@@ -29,7 +29,6 @@ const Header = () => {
         'Call us (215) 599-1400',
         'Click here to chat live',
         'We are available for you',
-        '1515 Market St #1650, Philadelphia',
     ]
 
     const currentMessage = messages[currentMessageIndex]
