@@ -253,15 +253,33 @@ export const ContactCard = styled.div`
     }
 `
 export const Container1 = styled.div`
+
     margin-top: 18rem;
     margin-bottom: 9rem;
     font-size: 0.7rem;
-    width: 100%;
+    width: 95%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-left: 3.2rem;
+    overflow: auto;
+    ::-webkit-scrollbar {
+        display: none; /* Hide the scrollbar for WebKit-based browsers */
+    }
+
+    img {
+        max-width: 100%;
+        width: 45vh;
+        height: 20vh;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        margin-left: 2rem;
+        @media (max-width: 768px) {
+        }
+    }
+
     @media (max-width: 768px) {
         margin-top: 54rem;
 
@@ -270,19 +288,32 @@ export const Container1 = styled.div`
         margin-left: 2.5rem;
         height: 55vh;
     }
+    
 `
 export const Container2 = styled.div`
-    margin-top: 3.5rem;
+    margin-top: 3rem;
     margin-bottom: 9rem;
     font-size: 0.7rem;
-    width: 90%;
+    width: 95%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-left: 3.2rem;
+
+    img {
+        max-width: 100%;
+        width: 45vh;
+        height: 20vh;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        margin-left: 2rem;
+        @media (max-width: 768px) {
+        }
+    }
     @media (max-width: 768px) {
-        margin-top: 6rem;
+        margin-top: 54rem;
 
         margin-bottom: 3rem;
         width: 80%;

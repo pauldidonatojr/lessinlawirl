@@ -51,8 +51,11 @@ const Video = styled.video`
     }
 `
 const CardTitle = styled.h2`
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     margin: 0.5rem 0;
+    text-decoration: underline;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Dark color */
 `
 
 const CardDescription = styled.p`

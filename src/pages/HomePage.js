@@ -10,8 +10,9 @@ import Footer from '../components/Footer.js'
 import Header from '../components/Header.js'
 import Pop from '../components/Pop.js'
 import Card2 from '../components/Card2.js'
+import Card3 from '../components/Card3.js'
 import Reviews from '../components/Reviews.js'
-import { carouselContent, carouselContent2 } from '../utils/data.js'
+import { carouselContent1, carouselContent2 } from '../utils/data.js'
 
 import {
     HomePageContainer,
@@ -43,16 +44,28 @@ const HomePage = () => {
       const [lawColor, setLawColor] = useState('#B0C4DE')
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
-    const [activeIndex, setActiveIndex] = useState(0)
+    const [activeIndex1, setActiveIndex1] = useState(0)
+      const [activeIndex2, setActiveIndex2] = useState(0)
     useEffect(() => {
         const timer = setTimeout(() => {
-            setActiveIndex(
-                activeIndex === carouselContent.length - 1 ? 0 : activeIndex + 1
+            setActiveIndex1(
+                activeIndex1 === carouselContent1.length - 1 ? 0 : activeIndex1 + 1
             )
         }, 8000)
 
         return () => clearTimeout(timer)
-    }, [activeIndex])
+    }, [activeIndex1])
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setActiveIndex2(
+                activeIndex2 === carouselContent2.length - 1
+                    ? 0
+                    : activeIndex2 + 1
+            )
+        }, 8000)
+
+        return () => clearTimeout(timer)
+    }, [activeIndex2])
 
     const [isMobile, setIsMobile] = useState(false)
 const getRandomColor = () => {
@@ -318,9 +331,10 @@ const colors = [
                     </div>
                 </Wrapper>
                 <Container1 style={{}}>
-                    <h1>{carouselContent2[activeIndex].title}</h1>
+                    <img src={carouselContent1[activeIndex1].image} alt="img" />
+                    <h1>{carouselContent1[activeIndex1].title}</h1>
                     <InternalTag2 style={internalTagStyle2}>
-                        {carouselContent2[activeIndex].description}
+                        {carouselContent1[activeIndex1].description}
                     </InternalTag2>
                 </Container1>
             </Main>
@@ -329,9 +343,10 @@ const colors = [
                     <Card2 />
                 </div>
                 <Container2>
-                    <h1>{carouselContent[activeIndex].title}</h1>
+                    <img src={carouselContent2[activeIndex2].image} alt="img" />
+                    <h1>{carouselContent2[activeIndex2].title}</h1>
                     <InternalTag1 style={internalTagStyle1}>
-                        {carouselContent[activeIndex].description}
+                        {carouselContent2[activeIndex2].description}
                     </InternalTag1>
                 </Container2>
 

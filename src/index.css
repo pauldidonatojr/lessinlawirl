@@ -367,6 +367,7 @@ nav {
    text-align: left;
    padding: 50px 60px 40px;
    overflow: hidden;
+
  }
 
  section {
@@ -378,6 +379,7 @@ nav {
    font-size: 22px;
    font-weight: 700;
    text-decoration: underline;
+    margin-top: 15rem;
  }
 
 

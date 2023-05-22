@@ -14,12 +14,12 @@ export const FooterContainer = styled.footer`
     left: 0;
     right: 0;
     z-index: 9999;
+
     @media (max-width: 768px) {
         flex-direction: column;
         position: relative;
     }
 `
-
 
 export const FooterLogo = styled.div`
     font-size: 2rem;

@@ -122,8 +122,9 @@ export const reviews = [
         text: 'If I listed everything good and positive about Jeff and his staff, this review would go on forever! He really knows his laws and case studies, easy to work with, very personable and pleasant. You don’t have to wait to get a response from Jeff or his staff. And gosh, his staff is amazing as well. He is upfront and honest and made navigating this ordeal much easier. As I said, I could go on and on. A lawsuit is never easy to go through, yet Jeff made it so much easier and less stressful. I felt like I had a friend, not just a lawyer. Jeff is dedicated and hardworking. I could not have had a better lawyer, and I was more than pleased with the final outcome. Thank you, Jeff Lessin!',
     },
 ]
-export const carouselContent2 = [
+export const carouselContent1 = [
     {
+        image: 'https://res.cloudinary.com/elpawl-llc/image/upload/v1684548786/caraccident_j31wys.webp',
         title: 'Car Accidents',
         description: `
 If you've been injured in a car accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping car accident victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of car accident cases and can guide you through the legal process from start to finish.
@@ -134,7 +135,8 @@ We handle a variety of car accident cases, including those involving drunk drivi
       `,
     },
     {
-        title: 'SEPTA Injuries',
+        image: 'https://res.cloudinary.com/elpawl-llc/image/upload/v1684548786/caraccident_j31wys.webp',
+         title: 'SEPTA Injuries',
         description: `
 If you've been injured while riding on a SEPTA vehicle or at a SEPTA station, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping SEPTA injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of SEPTA injury cases and can guide you through the legal process from start to finish.
 
@@ -144,6 +146,7 @@ If you've been injured while riding on a SEPTA vehicle or at a SEPTA station, yo
 `,
     },
     {
+        image: 'https://res.cloudinary.com/elpawl-llc/image/upload/v1684548786/caraccident_j31wys.webp',
         title: 'Slip and Fall Accidents',
         description: `
 If you've been injured in a slip and fall accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping slip and fall injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of slip and fall accident cases and can guide you through the legal process from start to finish.
@@ -154,8 +157,10 @@ If you've been injured in a slip and fall accident, you need an experienced pers
             `,
     },
 ]
-export const carouselContent = [
+export const carouselContent2 = [
     {
+        image: 'https://res.cloudinary.com/elpawl-llc/image/upload/v1684548786/caraccident_j31wys.webp',
+
         title: 'Car Accidents',
         description: `
 If you've been injured in a car accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping car accident victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of car accident cases and can guide you through the legal process from start to finish.
@@ -165,6 +170,8 @@ If you've been injured in a car accident, you need an experienced personal injur
       `,
     },
     {
+        image: 'https://res.cloudinary.com/elpawl-llc/image/upload/v1684548786/caraccident_j31wys.webp',
+
         title: 'SEPTA Injuries',
         description: `
 If you've been injured while riding on a SEPTA vehicle or at a SEPTA station, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping SEPTA injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of SEPTA injury cases and can guide you through the legal process from start to finish.
@@ -173,6 +180,8 @@ If you've been injured while riding on a SEPTA vehicle or at a SEPTA station, yo
 `,
     },
     {
+        image: 'https://res.cloudinary.com/elpawl-llc/image/upload/v1684548786/caraccident_j31wys.webp',
+
         title: 'Slip and Fall Accidents',
         description: `
 If you've been injured in a slip and fall accident, you need an experienced personal injury lawyer on your side. At our law firm, we specialize in helping slip and fall injury victims get the compensation they deserve. Our team of skilled attorneys understands the complexities of slip and fall accident cases and can guide you through the legal process from start to finish.
