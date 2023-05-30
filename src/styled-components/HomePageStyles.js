@@ -3,9 +3,13 @@ import styled from 'styled-components'
 export const HomePageContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    max-width: 1600px;
+    max-width: 1800px;
     margin: 0 auto;
     height: 60vh;
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        max-width: 1500px;
+        display: flex;
+    }
 `
 
 export const VideoBackground = styled.video`
@@ -253,33 +257,34 @@ export const ContactCard = styled.div`
     }
 `
 export const Container1 = styled.div`
+    border-radius: 5%;
 
-    margin-top: 18rem;
-    margin-bottom: 9rem;
+    margin-top: 19rem;
+    margin-bottom: 8rem;
     font-size: 0.7rem;
-    width: 95%;
+    width: 80%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-left: 3.2rem;
-    overflow: auto;
+    height: 55vh;
+    overflow: scroll;
     ::-webkit-scrollbar {
         display: none; /* Hide the scrollbar for WebKit-based browsers */
     }
-
     img {
         max-width: 100%;
-        width: 45vh;
-        height: 20vh;
+        width: 40vh;
+        height: 25vh;
         margin-top: 2rem;
         margin-bottom: 3rem;
-        margin-left: 2rem;
+        margin-left: 3rem;
+        border-radius: 4%;
         @media (max-width: 768px) {
         }
     }
-
     @media (max-width: 768px) {
         margin-top: 54rem;
 
@@ -288,27 +293,58 @@ export const Container1 = styled.div`
         margin-left: 2.5rem;
         height: 55vh;
     }
-    
+
+    /* Tablets and Small Screens */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        background-color: purple;
+    }
+
+    /* Medium-sized Screens */
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        /* Styles for medium-sized screens */
+        background-color: orange;
+        img {
+            max-width: 100%;
+            width: 35vh;
+            height: 25vh;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            margin-left: 3rem;
+            @media (max-width: 768px) {
+            }
+        }
+    }
+
+    /* Large Screens */
+    @media (min-width: 1281px) {
+        /* Styles for large screens */
+    }
 `
 export const Container2 = styled.div`
+    border-radius: 5%;
     margin-top: 3rem;
     margin-bottom: 9rem;
     font-size: 0.7rem;
-    width: 95%;
+    width: 80%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: 3.2rem;
-
+    margin-left: 0.8rem;
+    height: 55vh;
+    overflow: scroll;
+    ::-webkit-scrollbar {
+        display: none; /* Hide the scrollbar for WebKit-based browsers */
+    }
     img {
         max-width: 100%;
-        width: 45vh;
-        height: 20vh;
+        width: 40vh;
+        height: 25vh;
         margin-top: 2rem;
         margin-bottom: 3rem;
-        margin-left: 2rem;
+        margin-left: 3rem;
+        border-radius: 4%;
         @media (max-width: 768px) {
         }
     }
@@ -319,6 +355,10 @@ export const Container2 = styled.div`
         width: 80%;
         margin-left: 2.5rem;
         height: 55vh;
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+        .Container1 {
+        }
     }
 `
 export const Title = styled.div`
@@ -391,21 +431,55 @@ export const Main = styled.div`
     }
 
     @media (max-width: 768px) {
-      =
+    }
+
+    @media (min-width: 1025px) and (max-width: 1280px) {
     }
 `
 export const Main1 = styled.div`
     display: grid;
     justify-content: center;
-
     padding: 8px;
-    height: 85vh;
+    margin-top: 4rem;
+    height: 95vh;
     width: 15rem;
-    .mainbox {
+
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        margin-bottom: 10rem;
+        background-color: purple;
+        .lessintitle {
+            font-size: 5rem;
+        }
+        width: 60rem;
+        height: 40vh;
+        .mainbox1 {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            height: 20vh;
+            .textContent {
+                font-size: 1.2rem;
+            }
+        }
+        .button-group {
+            display: flex;
+        }
+    }
+
+    .mainbox1 {
         width: 15rem;
+        display: grid;
+        flex-direction: column;
+        align-items: center;
+        height: 110vh;
+        justify-content: center;
         overflow: auto;
         ::-webkit-scrollbar {
             display: none; /* Hide the scrollbar for WebKit-based browsers */
+        }
+
+        .textContent {
+            font-size: 1.2rem;
         }
     }
     h1 {
@@ -415,6 +489,11 @@ export const Main1 = styled.div`
     h3 {
         text-decoration: underline;
     }
+
+    .lessintitle {
+        font-size: 3.2rem;
+    }
+
     p {
         font-size: 17px;
         line-height: 1.5;
@@ -436,10 +515,16 @@ export const Main1 = styled.div`
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 65vh;
+        height: 40vh;
         margin-top: 0.5rem;
-        .mainbox {
+        .mainbox1 {
             width: 20rem;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        .button-group {
+            display: grid;
         }
         h1 {
             font-size: 60px;
@@ -503,46 +588,45 @@ export const InternalTag2 = styled.span`
     font-weight: 600;
 `
 export const Testimonials = styled.div`
-     {
-        flex: 0 0 300px;
-        margin-top: 10px;
-        padding: 5px;
-        background-color: #f5f5f5;
-        overflow: auto;
-        max-height: 400px; /* Adjust the value to your desired maximum height */
+    flex: 0 0 300px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    overflow: auto;
+    max-height: 400px; /* Adjust the value to your desired maximum height */
+    margin-top: 2rem;
+    p {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-left: 1rem;
+    }
+    .client {
+        text-decoration: underline;
+        font-size: 1.4rem;
+        margin-left: 1.5rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+        margin-left: 1.2rem;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+    .stars {
+        margin-left: 1.2rem;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
 
-        p {
+        li {
             font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            margin-left: 1rem;
-        }
-        .client {
-            text-decoration: underline;
-            font-size: 1.4rem;
-            margin-left: 1.5rem;
-        }
-        h3 {
-            font-size: 1.5rem;
-            margin-left: 1.2rem;
-            text-decoration: underline;
-            font-weight: 500;
-        }
-        .stars {
-            margin-left: 1.2rem;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            li {
-                font-size: 18px;
-                line-height: 1.5;
-                margin-bottom: 10px;
-            }
+            line-height: 1.5;
+            margin-bottom: 10px;
         }
     }
+
     @media (max-width: 768px) {
         margin-top: 95rem;
     }

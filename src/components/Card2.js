@@ -18,8 +18,12 @@ const CardContainer = styled.div`
     text-align: center;
     margin-top: 3.5rem;
     height: 45vh;
-    width: 52vh;
-    margin-left: 2rem;
+    width: 50vh;
+    margin-left: 0.5rem;
+    overflow: scroll;
+    ::-webkit-scrollbar {
+        display: none; /* Hide the scrollbar for WebKit-based browsers */
+    }
     @media (max-width: 768px) {
         width: 80%;
         height: 100vh;
@@ -106,7 +110,7 @@ In essence, pursuing justice after facing instances of police misconduct or disc
             {/* <Video autoPlay controls>
                 <source src={video} type="video/mp4" />
             </Video> */}
-            <CardImage src={image} alt={title} />
+        {/*   <CardImage src={image} alt={title} /> */}
             <CardDescription>{description}</CardDescription>
         </CardContainer>
     )

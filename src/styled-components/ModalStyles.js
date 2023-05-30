@@ -7,6 +7,11 @@ export const Wrapper = styled.main`
     height: 25vh;
     width: 100%;
 
+    @media (min-width: 1025px) and (max-width: 1280px) {
+
+
+
+    }
     .navbar {
         background-color: blue;
         width: 100%;

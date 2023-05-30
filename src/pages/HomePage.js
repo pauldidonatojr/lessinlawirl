@@ -12,7 +12,7 @@ import Pop from '../components/Pop.js'
 import Card2 from '../components/Card2.js'
 import Card3 from '../components/Card3.js'
 import Reviews from '../components/Reviews.js'
-import { carouselContent1, carouselContent2 } from '../utils/data.js'
+import { carouselContent1, carouselContent2 } from '../utils/imagedata.js'
 
 import {
     HomePageContainer,
@@ -62,7 +62,7 @@ const HomePage = () => {
                     ? 0
                     : activeIndex2 + 1
             )
-        }, 8000)
+        }, 4000)
 
         return () => clearTimeout(timer)
     }, [activeIndex2])
@@ -183,7 +183,7 @@ const colors = [
     return (
         <HomePageContainer>
             <Main1>
-                <div className="mainbox">
+                <div className="mainbox1">
                     <h1 className="lessintitle">
                         <span style={{ color: lessinColor }}>Lessin</span>{' '}
                         <span style={{ color: lawColor }}>Law</span>
@@ -191,13 +191,13 @@ const colors = [
                     <h3> Pennsylvania Personal Injury Lawyers</h3>
                     <p
                         onClick={openURL}
-                        style={{ marginLeft: '1rem', fontSize: '1rem' }}
+                        style={{ marginLeft: '1rem', fontSize: '1.5rem' }}
                     >
                         {' '}
                         Click Here Leave Us a Review!{' '}
                     </p>
 
-                    <div style={{ display: 'grid' }}>
+                    <div className='button-group' >
                         <Button
                             variant="contained"
                             onClick={openChat}
@@ -221,7 +221,7 @@ const colors = [
                         </Button>
                     </div>
 
-                    <p>
+                    <p className='textContent'>
                         Our team of dedicated personal injury lawyers is devoted
                         to seeking justice for our clients who have suffered
                         injuries in various incidents. We specialize in handling
