@@ -3,12 +3,27 @@ import styled from 'styled-components'
 export const HomePageContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    max-width: 1800px;
     margin: 0 auto;
-    height: 60vh;
-    @media (min-width: 1025px) and (max-width: 1280px) {
-        max-width: 1500px;
+   width: 100%;
+
+    @media (max-width: 768px) {
+        background-color: red;
+    }
+
+    /* Tablets and Small Screens */
+    @media (min-width: 769px) and (max-width: 1024px) {
         display: flex;
+        background-color: orange;
+    }
+
+    /* Medium-sized Screens */
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        background-color: beige;
+    }
+
+    /* Large Screens */
+    @media (min-width: 1281px) {
+        /* Styles for large screens */
     }
 `
 
@@ -262,7 +277,8 @@ export const Container1 = styled.div`
     margin-top: 19rem;
     margin-bottom: 8rem;
     font-size: 0.7rem;
-    width: 80%;
+    width: 55vh;
+
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     display: grid;
     justify-content: center;
@@ -322,10 +338,11 @@ export const Container1 = styled.div`
 `
 export const Container2 = styled.div`
     border-radius: 5%;
-    margin-top: 3rem;
+    margin-top: 4.3rem;
     margin-bottom: 9rem;
     font-size: 0.7rem;
-    width: 80%;
+    width: 55vh;
+
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     display: grid;
     justify-content: center;
@@ -443,7 +460,7 @@ export const Main1 = styled.div`
     margin-top: 4rem;
     height: 95vh;
     width: 15rem;
-
+  margin-left: 4rem;
     @media (min-width: 1025px) and (max-width: 1280px) {
         margin-bottom: 10rem;
         background-color: purple;
@@ -547,7 +564,7 @@ export const Main1 = styled.div`
 export const Sidebar = styled.div`
     flex: 0 0 300px;
     padding: 20px;
-
+   margin-right: 3rem;
     p {
         font-size: 24px;
         font-weight: bold;

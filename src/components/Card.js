@@ -19,7 +19,7 @@ const CardContainer = styled.div`
     text-align: center;
     margin-top: 6.5rem;
     height: 45vh;
-    width: 50vh;
+    width: 55vh;
     background-attachment: red;
     margin-left: 2rem;
     overflow: scroll;

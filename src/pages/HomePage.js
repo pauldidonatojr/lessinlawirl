@@ -40,16 +40,18 @@ const HomePage = () => {
     const { openChat } = useModalContext()
     const { isModalOpen, closeModal } = useModalContext()
     const { isChatOpen, closeChat } = useModalContext()
-      const [lessinColor, setLessinColor] = useState('#003366')
-      const [lawColor, setLawColor] = useState('#B0C4DE')
+    const [lessinColor, setLessinColor] = useState('#003366')
+    const [lawColor, setLawColor] = useState('#B0C4DE')
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
     const [activeIndex1, setActiveIndex1] = useState(0)
-      const [activeIndex2, setActiveIndex2] = useState(0)
+    const [activeIndex2, setActiveIndex2] = useState(0)
     useEffect(() => {
         const timer = setTimeout(() => {
             setActiveIndex1(
-                activeIndex1 === carouselContent1.length - 1 ? 0 : activeIndex1 + 1
+                activeIndex1 === carouselContent1.length - 1
+                    ? 0
+                    : activeIndex1 + 1
             )
         }, 8000)
 
@@ -68,31 +70,30 @@ const HomePage = () => {
     }, [activeIndex2])
 
     const [isMobile, setIsMobile] = useState(false)
-const getRandomColor = () => {
-const colors = [
-    '#001d33',
-    '#3d8d9c',
-    '#1f6a82',
-    '#196a8a',
-    '#4e6462',
-    '#1f4066',
-    '#2c6599',
-    '#3d7370',
-    '#1f898f',
-    '#00a6c2',
-    '#064d63',
-    '#0b9bb8',
-    '#006b87',
-    '#0088b3',
-    '#0b9fcc',
-    '#6a9dc7',
-    '#0d99cc',
-]
+    const getRandomColor = () => {
+        const colors = [
+            '#001d33',
+            '#3d8d9c',
+            '#1f6a82',
+            '#196a8a',
+            '#4e6462',
+            '#1f4066',
+            '#2c6599',
+            '#3d7370',
+            '#1f898f',
+            '#00a6c2',
+            '#064d63',
+            '#0b9bb8',
+            '#006b87',
+            '#0088b3',
+            '#0b9fcc',
+            '#6a9dc7',
+            '#0d99cc',
+        ]
 
-
-    const randomIndex = Math.floor(Math.random() * colors.length)
-    return colors[randomIndex]
-}
+        const randomIndex = Math.floor(Math.random() * colors.length)
+        return colors[randomIndex]
+    }
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 767)
         handleResize()
@@ -100,15 +101,15 @@ const colors = [
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-  useEffect(() => {
-      const intervalId = setInterval(() => {
-          setLessinColor(getRandomColor())
-          setLawColor(getRandomColor())
-      }, 2000)
-      return () => {
-          clearInterval(intervalId)
-      }
-  }, [])
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setLessinColor(getRandomColor())
+            setLawColor(getRandomColor())
+        }, 2000)
+        return () => {
+            clearInterval(intervalId)
+        }
+    }, [])
     const internalTagStyle1 = isMobile ? { fontSize: '0.93rem' } : {}
     const internalTagStyle2 = isMobile ? { fontSize: '0.95rem' } : {}
 
@@ -197,7 +198,7 @@ const colors = [
                         Click Here Leave Us a Review!{' '}
                     </p>
 
-                    <div className='button-group' >
+                    <div className="button-group">
                         <Button
                             variant="contained"
                             onClick={openChat}
@@ -219,9 +220,10 @@ const colors = [
                         >
                             contact us
                         </Button>
+
                     </div>
 
-                    <p className='textContent'>
+                    <p className="textContent">
                         Our team of dedicated personal injury lawyers is devoted
                         to seeking justice for our clients who have suffered
                         injuries in various incidents. We specialize in handling

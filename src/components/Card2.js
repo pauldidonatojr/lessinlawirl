@@ -18,7 +18,7 @@ const CardContainer = styled.div`
     text-align: center;
     margin-top: 3.5rem;
     height: 45vh;
-    width: 50vh;
+    width: 55vh;
     margin-left: 0.5rem;
     overflow: scroll;
     ::-webkit-scrollbar {
