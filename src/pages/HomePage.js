@@ -328,8 +328,8 @@ const HomePage = () => {
                                 </div>
                             </div>
                         </div>
-                        <>{card}</>
                     </div>
+                    <>{card}</>
                 </Wrapper>
                 <Container1 style={{}}>
                     <img src={carouselContent1[activeIndex1].image} alt="img" />
@@ -378,7 +378,12 @@ const HomePage = () => {
                     <Reviews />
                 </Testimonials>
 
-                <Ad>
+                <Ad
+                    style={{
+                        backgroundColor: '#dae1e5',
+                        border: '4px black solid',
+                    }}
+                >
                     <div
                         style={{
                             display: 'grid',

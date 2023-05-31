@@ -9,9 +9,9 @@ import gifImage5 from '../assets/gif6.gif'
 
 const CardContainer = styled.div`
     ${'' /* background-color: #f5f5f5; */}
-    border-radius: 5%;
+    border-radius: 4%;
+    border: 4px black solid;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
     padding: 0.2rem;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,7 @@ const CardContainer = styled.div`
     width: 55vh;
     margin-left: 2rem;
     overflow: scroll;
+    background-color: #dae1e5;
     ::-webkit-scrollbar {
         display: none; /* Hide the scrollbar for WebKit-based browsers */
     }

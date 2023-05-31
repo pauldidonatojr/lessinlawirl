@@ -22,6 +22,8 @@ const CardContainer = styled.div`
     margin-left: 0.5rem;
     overflow: scroll;
     border-radius: 5%;
+    background-color: #dae1e5;
+    border: 3px black solid;
 
     ::-webkit-scrollbar {
         display: none; /* Hide the scrollbar for WebKit-based browsers */

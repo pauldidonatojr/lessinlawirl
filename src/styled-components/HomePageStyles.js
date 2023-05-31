@@ -272,6 +272,9 @@ export const ContactCard = styled.div`
     }
 `
 export const Container1 = styled.div`
+    background-color: #dae1e5;
+    border: 4px black solid;
+
     border-radius: 5%;
 
     margin-top: 25rem;
@@ -337,6 +340,9 @@ export const Container1 = styled.div`
     }
 `
 export const Container2 = styled.div`
+    background-color: #dae1e5;
+    border: 4px black solid;
+
     border-radius: 5%;
     margin-top: 2.3rem;
     margin-bottom: 5rem;
@@ -454,13 +460,16 @@ export const Main = styled.div`
     }
 `
 export const Main1 = styled.div`
+    border: 4px black solid;
+
     display: grid;
     justify-content: center;
     padding: 8px;
     margin-top: 4rem;
-    height: 95vh;
-    width: 15rem;
-  margin-left: 4rem;
+    height: 115vh;
+    width: 18rem;
+    margin-left: 4rem;
+    background-color: #dae1e5;
     @media (min-width: 1025px) and (max-width: 1280px) {
         margin-bottom: 10rem;
         background-color: purple;
@@ -564,7 +573,8 @@ export const Main1 = styled.div`
 export const Sidebar = styled.div`
     flex: 0 0 300px;
     padding: 20px;
-   margin-right: 3rem;
+    margin-right: 3rem;
+
     p {
         font-size: 24px;
         font-weight: bold;
@@ -605,10 +615,12 @@ export const InternalTag2 = styled.span`
     font-weight: 600;
 `
 export const Testimonials = styled.div`
+    border: 4px black solid;
+
     flex: 0 0 300px;
     margin-top: 10px;
     padding: 5px;
-    background-color: #f5f5f5;
+    background-color: #dae1e5;
     overflow: auto;
     max-height: 400px; /* Adjust the value to your desired maximum height */
     margin-top: 2rem;
