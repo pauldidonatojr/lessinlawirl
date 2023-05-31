@@ -16,11 +16,13 @@ const CardContainer = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 3.5rem;
-    height: 45vh;
+    margin-top: 6.5rem;
+    height: 55vh;
     width: 55vh;
     margin-left: 0.5rem;
     overflow: scroll;
+    border-radius: 5%;
+
     ::-webkit-scrollbar {
         display: none; /* Hide the scrollbar for WebKit-based browsers */
     }

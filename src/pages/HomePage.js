@@ -220,7 +220,6 @@ const HomePage = () => {
                         >
                             contact us
                         </Button>
-
                     </div>
 
                     <p className="textContent">
@@ -341,9 +340,6 @@ const HomePage = () => {
                 </Container1>
             </Main>
             <Main>
-                <div>
-                    <Card2 />
-                </div>
                 <Container2>
                     <img src={carouselContent2[activeIndex2].image} alt="img" />
                     <h1>{carouselContent2[activeIndex2].title}</h1>
@@ -351,7 +347,9 @@ const HomePage = () => {
                         {carouselContent2[activeIndex2].description}
                     </InternalTag1>
                 </Container2>
-
+                <div>
+                    <Card2 />
+                </div>
                 {/* <img
                     style={{ marginTop: '3rem' }}
                     src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"
@@ -362,6 +360,13 @@ const HomePage = () => {
             <Sidebar>
                 <Testimonials>
                     <p className="client">Client Testimonials</p>
+                    <Link to="https://www.facebook.com/lessinlawphiladelphia">
+                        {' '}
+                        <p className="client" style={{ marginLeft: '1rem' }}>
+                            {' '}
+                            Find us on Facebook!
+                        </p>
+                    </Link>
                     <p onClick={openURL} style={{ marginLeft: '4.5rem' }}>
                         {' '}
                         Click Here{' '}

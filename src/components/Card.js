@@ -9,7 +9,7 @@ import gifImage5 from '../assets/gif6.gif'
 
 const CardContainer = styled.div`
     ${'' /* background-color: #f5f5f5; */}
-
+    border-radius: 5%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     padding: 0.2rem;
@@ -17,10 +17,9 @@ const CardContainer = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 6.5rem;
-    height: 45vh;
+    margin-top: 6rem;
+    height: 55vh;
     width: 55vh;
-    background-attachment: red;
     margin-left: 2rem;
     overflow: scroll;
     ::-webkit-scrollbar {
@@ -113,7 +112,7 @@ In essence, pursuing justice after facing instances of police misconduct or disc
             {/* <Video autoPlay controls>
                 <source src={video} type="video/mp4" />
             </Video> */}
-          {/*  <CardImage src={image} alt={title} /> */}
+            {/*  <CardImage src={image} alt={title} /> */}
             <CardDescription>{description}</CardDescription>
         </CardContainer>
     )

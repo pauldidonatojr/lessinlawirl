@@ -274,7 +274,7 @@ export const ContactCard = styled.div`
 export const Container1 = styled.div`
     border-radius: 5%;
 
-    margin-top: 19rem;
+    margin-top: 25rem;
     margin-bottom: 8rem;
     font-size: 0.7rem;
     width: 55vh;
@@ -292,7 +292,7 @@ export const Container1 = styled.div`
     }
     img {
         max-width: 100%;
-        width: 40vh;
+        width: 45vh;
         height: 25vh;
         margin-top: 2rem;
         margin-bottom: 3rem;
@@ -338,8 +338,8 @@ export const Container1 = styled.div`
 `
 export const Container2 = styled.div`
     border-radius: 5%;
-    margin-top: 4.3rem;
-    margin-bottom: 9rem;
+    margin-top: 2.3rem;
+    margin-bottom: 5rem;
     font-size: 0.7rem;
     width: 55vh;
 
@@ -356,7 +356,7 @@ export const Container2 = styled.div`
     }
     img {
         max-width: 100%;
-        width: 40vh;
+        width: 45vh;
         height: 25vh;
         margin-top: 2rem;
         margin-bottom: 3rem;
